@@ -2,7 +2,7 @@
 let s:configuration = nightfall_dimmed#get_configuration()
 let s:palette = nightfall_dimmed#get_palette(s:configuration.background, s:configuration.colors_override)
 let s:path = expand('<sfile>:p') " the path of this script
-let s:last_modified = 'Tue Jun 25 13:38:33 UTC 2024'
+let s:last_modified = 'Tue Jun 28 15:10:23 UTC 2024'
 let g:nightfall_dimmed_loaded_file_types = []
 
 if !(exists('g:colors_name') && g:colors_name ==# 'nightfall_dimmed' && s:configuration.better_performance)
