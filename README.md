@@ -1,5 +1,8 @@
 # Nightfall Dimmed
 
+### Table of Contents
+[TOC]
+
 ## Introduction
 
 A dimmed, dark & beautiful theme made by developers, for developers.
