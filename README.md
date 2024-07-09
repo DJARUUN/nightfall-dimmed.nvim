@@ -1,13 +1,14 @@
-# Nightfall Dimmed
+![Nightfall Dimmed](https://github.com/kjellherzke/nightfall-theme/raw/main/images/logo.png)
+
+
+A dimmed, dark & beautiful theme made by developers, for developers.
+
+---
 
 ### Table of Contents
 [TOC]
 
-## Introduction
-
-A dimmed, dark & beautiful theme made by developers, for developers.
-
-### Features
+## Features
 
 - Based on various popular other themes.
 - Customizable.
