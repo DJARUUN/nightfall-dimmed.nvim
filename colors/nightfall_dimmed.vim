@@ -208,8 +208,6 @@ if has('nvim')
     call nightfall_dimmed#highlight('DiagnosticHint', s:palette.green, s:palette.none)
     call nightfall_dimmed#highlight('DiagnosticUnderlineHint', s:palette.none, s:palette.none, 'undercurl', s:palette.green)
   endif
-  highlight! link Normal @property
-  highlight! link NormalNC @property
   highlight! link StatusLineTerm StatusLineTermNC
   highlight! link StatusLineTermNC StatusLineTermNC
   highlight! link DiagnosticFloatingError ErrorFloat
