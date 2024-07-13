@@ -208,14 +208,18 @@ if has('nvim')
     call nightfall_dimmed#highlight('DiagnosticHint', s:palette.green, s:palette.none)
     call nightfall_dimmed#highlight('DiagnosticUnderlineHint', s:palette.none, s:palette.none, 'undercurl', s:palette.green)
   endif
+  highlight! link Normal @property
+  highlight! link NormalNC @property
+  highlight! link StatusLineTerm StatusLineTermNC
+  highlight! link StatusLineTermNC StatusLineTermNC
   highlight! link DiagnosticFloatingError ErrorFloat
   highlight! link DiagnosticFloatingWarn WarningFloat
   highlight! link DiagnosticFloatingInfo InfoFloat
   highlight! link DiagnosticFloatingHint HintFloat
-  highlight! link DiagnosticVirtualTextError VirtualTextError
-  highlight! link DiagnosticVirtualTextWarn VirtualTextWarning
-  highlight! link DiagnosticVirtualTextInfo VirtualTextInfo
-  highlight! link DiagnosticVirtualTextHint VirtualTextHint
+  highlight! link DiagnosticVirtualTextError LspDiagnosticsSignError
+  highlight! link DiagnosticVirtualTextWarn LspDiagnosticsSignWarning
+  highlight! link DiagnosticVirtualTextInfo LspDiagnosticsSignInformation
+  highlight! link DiagnosticVirtualTextHint LspDiagnosticsSignHint
   highlight! link DiagnosticSignError RedSign
   highlight! link DiagnosticSignWarn YellowSign
   highlight! link DiagnosticSignInfo BlueSign
@@ -251,6 +255,12 @@ if has('nvim')
   highlight! link healthError Red
   highlight! link healthSuccess Green
   highlight! link healthWarning Yellow
+  highlight! link FlashLabel FlashCursor
+  highlight! Foreground guifg=#2e383c
+  highlight! link FoldColumn Foreground
+  highlight! LspReferenceRead guibg=NONE guifg=NONE gui=underline
+  highlight! LspReferenceWrite guibg=NONE guifg=NONE gui=underline
+  highlight! LspReferenceText guibg=NONE guifg=NONE gui=underline
 endif
 " }}}
 " Syntax: {{{
@@ -1181,9 +1191,13 @@ highlight! link TroubleCode Grey
 " }}}
 " nvim-telescope/telescope.nvim {{{
 call nightfall_dimmed#highlight('TelescopeMatching', s:palette.green, s:palette.none, 'bold')
-highlight! link TelescopeBorder Grey
+highlight! link TelescopeBorder LspSagaDiagnosticBorder
+highlight! link TelescopePromptBorder LspSagaDiagnosticBorder
+highlight! link TelescopeResultsBorder LspSagaCodeActionBorder
+highlight! link TelescopeNormal DiffviewNormal
 highlight! link TelescopePromptPrefix Orange
-highlight! link TelescopeSelection DiffAdd
+highlight! link TelescopeSelection CursorLine
+highlight! link TelescopeSelectionCaret CursorLine
 " }}}
 " lewis6991/gitsigns.nvim {{{
 highlight! link GitSignsAdd GreenSign
@@ -1195,7 +1209,7 @@ highlight! link GitSignsDeleteNr Red
 highlight! link GitSignsAddLn DiffAdd
 highlight! link GitSignsChangeLn DiffChange
 highlight! link GitSignsDeleteLn DiffDelete
-highlight! link GitSignsCurrentLineBlame Grey
+highlight! link GitSignsCurrentLineBlame Comment
 " }}}
 " phaazon/hop.nvim {{{
 call nightfall_dimmed#highlight('HopNextKey', s:palette.orange, s:palette.none, 'bold')
@@ -1393,7 +1407,7 @@ highlight! link MiniFilesDirectory Directory
 highlight! link MiniFilesFile NormalFloat
 highlight! link MiniFilesNormal NormalFloat
 highlight! link MiniFilesTitle FloatTitle
-highlight! link MiniIndentscopeSymbol Grey
+highlight! link MiniIndentscopeSymbol LineNr
 highlight! link MiniJump Search
 highlight! link MiniJump2dDim Comment
 highlight! link MiniMapNormal NormalFloat
@@ -1417,7 +1431,7 @@ highlight! link MiniPickNormal NormalFloat
 highlight! link MiniPickPreviewLine CursorLine
 highlight! link MiniPickPreviewRegion IncSearch
 highlight! link MiniPickPrompt DiagnosticFloatingInfo
-highlight! link MiniStarterFooter Orange
+highlight! link MiniStarterFooter MiniStarterInactive
 highlight! link MiniStarterHeader Yellow
 highlight! link MiniStarterInactive Comment
 highlight! link MiniStarterItem Normal
@@ -3122,5 +3136,10 @@ call nightfall_dimmed#highlight('MasonMuted', s:palette.grey0, s:palette.none)
 call nightfall_dimmed#highlight('MasonMutedBlock', s:palette.bg0, s:palette.grey0)
 " syn_end }}}
 " }}}
+highlight! link Title @none
+highlight! link Macro @function.method.call
+highlight! link markDownCode markDownBold
+highlight! link @markup.raw.block.markdown markDownBold
+highlight! link SpecialChar @property
 
 " vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker fmr={{{,}}}:
