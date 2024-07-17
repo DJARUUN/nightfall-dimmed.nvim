@@ -410,7 +410,7 @@ else
   call nightfall_dimmed#highlight('CurrentWord', s:palette.none, s:palette.none, s:configuration.current_word)
 endif
 if s:configuration.inlay_hints_background ==# 'none'
-  highlight! link InlayHints LineNr
+  highlight! link InlayHints Grey
 else
   call nightfall_dimmed#highlight('InlayHints', s:palette.grey1, s:palette.bg_dim)
 endif
