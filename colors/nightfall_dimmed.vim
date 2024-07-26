@@ -693,8 +693,8 @@ if has('nvim-0.8')
   highlight! link @variable.builtin TSVariableBuiltin
   highlight! link @variable.member TSField
   highlight! link @variable.parameter TSParameter
-  highlight! link @string.special.symbol.elixir Orange
-  highlight! link @constant.elixir Orange
+  highlight! link @string.special.symbol.elixir Blue
+  highlight! link @constant.elixir Blue
 endif
 if has('nvim-0.9')
   highlight! link @lsp.type.class TSType
